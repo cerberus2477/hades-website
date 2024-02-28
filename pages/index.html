@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Videójátékok</title>
+  <script defer src="../code/app.js"></script>
+  <script defer src="https://kit.fontawesome.com/af2e246792.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/index.css" />
+</head>
+
+<body>
+  <nav data-state="closed">
+    <a class="logo" href="index.html">[reszponzív website]</a>
+    <a href="hades.html">Hádész</a>
+    <a href="starcraft.html">Starcraft II</a>
+    <a href="unrailed.html">UNrailed</a>
+    <a href="amoba.html">3D amőba</a>
+    <a href="#" id="nav_btn" onclick="toggle_nav();">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+
+  <header class="main-header">
+    <section data-status="active" class="slide">
+      <video autoplay muted loop>
+        <source src="../pics/index/hades_animated.mp4" type="video/mp4" />
+        <!-- https://www.youtube.com/watch?v=y74WBx-nwew -->
+      </video>
+
+      <div class="hero-text">
+        <h1>Hádész</h1>
+        <p>
+          A Hádész egy görög mítologiát feldolgozó játék, ahol Hádész, az
+          alvilág istenének halhatatlan fiaként próbálhatunk megszökni az
+          alvilágból.
+        </p>
+        <a href="./hades.html" class="btn">Mutass többet</a>
+      </div>
+    </section>
+
+    <section data-status="inactive" class="slide">
+      <video autoplay muted loop>
+        <source src="../pics/index/starcraft2.mp4" type="video/mp4" />
+        <!-- https://www.youtube.com/watch?v=aVtXac6if14 -->
+      </video>
+
+      <div class="hero-text">
+        <h1>Starcraft II</h1>
+        <p>A StarCraft 2 egy RTS (Real Time Strategy) vagyis valós idejű,
+          stratégiai játék, ami szinte mindig azt jelenti, hogy felülnézetből
+          irányítunk egységeket, és építünk házakat, infrastruktúrát.</p>
+        <a href="./starcraft.html" class="btn">Mutass többet</a>
+      </div>
+    </section>
+
+    <section data-status="inactive" class="slide">
+      <video autoplay muted loop>
+        <source src="../pics/index/unrailed.mp4" type="video/mp4" />
+        <!-- https://www.youtube.com/watch?v=RMlBDLABjuM -->
+      </video>
+
+      <div class="hero-text">
+        <h1>Unrailed</h1>
+        <p>
+          Unrailed lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Nostrum vel id odit iste minus recusandae perspiciatis minima, a
+          incidunt possimus corporis officiis quibusdam adipisci cumque fugiat
+          consequatur praesentium! Voluptas, nobis!
+        </p>
+        <a href="./unrailed.html" class="btn">Mutass többet</a>
+      </div>
+    </section>
+
+    <section data-status="inactive" class="slide">
+      <video autoplay muted loop>
+        <source src="../pics/index/amoba.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-text">
+        <h1>3D amőba</h1>
+        <p>
+          A 3D amőba pontosan az, aminek hangzik. Egy érdekes fordulat a klasszikus játékon, négyzet helyett kockában
+          játszva.
+        </p>
+        <a href="./amoba.html" class="btn">Mutass többet</a>
+      </div>
+    </section>
+
+    <div class="btn-container">
+      <button class="slider-btn" onclick="prev_slide()">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn" onclick="next_slide()">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="card cim">
+      <h1>[reszponzív website]</h1>
+    </div>
+    <div class="card bev">
+      <h2>Üdvözölve légy, látogató!</h2>
+      <p>
+        Eme csodás weboldalon négy fajtájukat tekintve különböző, de játékélményben toplistás játékkal
+        találkozhatsz. A hitelesség érdekében mindegyikünk egy saját szeretett játékát hozta el <strong>csak neked csak
+          most</strong>.
+        Mi lennénk a három készítő:
+    </div>
+    <div class="card levi">
+      <h2>Nacsa Levente</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
+        incidunt ullam veritatis quisquam commodi amet minus, ipsum cumque
+        illum voluptates dolorum. Earum sed veritatis dolorem perspiciatis
+        modi! Ducimus totam expedita consectetur soluta incidunt magni
+        quisquam est eaque placeat. Provident quas, sequi magnam quaerat error
+        corrupti debitis minima atque quia eius!
+      </p>
+    </div>
+    <div class="card andras">
+      <h2>Szabolics András</h2>
+      <p>
+        Ebben a projektben a saját játék elkészítését kaptam vagyhát vállaltam feladatként, szinte egyből a 3D amőbára
+        ugrott a
+        gondolatom. Többször játszottam már papíron, sőt az ötlet sem új, régóta meg akartam valósítani egy átláthatóbb
+        verzióját. Emellet az egyik első projektemhez 2D-s amőbát csináltam, így fejlődesem bizonyításában is sokat
+        segített ez
+        a feladat. <br>
+        Másodlagos feladatként a StarCraftot mutattam be, egyik kedvenc játék szériám, sokat tudok róla, élmény volt ezt
+        megosztani.
+      </p>
+    </div>
+    <div class="card tunde">
+      <h2>Tábor Tünde</h2>
+      <p>
+        Tábor Tünde volnék, bár mindannyian ismertek. Szeretem a macskákat, röplabdázni... de most nem ez a lényeg.
+        Ebben a projektben az összefogó dizájn fő ötletgazdája én lettem. Szerettem volna egy nem annyira sablonos
+        weboldalt alkotni, amelyről csak azt lehet elmondani hogy <i>"modern és letisztult"</i>. Inspirációul vettem a
+        kezdetleges, eldugott fanoldalak összességét, amelyeken tükröződik, hogy a weboldal készítője törődik azzal
+        amiről ír. Ezeknél az oldalaknál viszont mérföldekkel navigálhatóbbra és ha úgy tetszik letisztultabbra
+        terveztük a weboldalt. A grid adottságait is kihasználtuk.<br>A játék amit bemutattam a Hádész lett, az all-time
+        kedvenc videójátékom.
+    </div>
+  </main>
+</body>
+
+</html>

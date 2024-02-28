@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D Amőba</title>
+    <script defer src="../code/app.js"></script>
+    <script defer src="../code/amoba.js"></script>
+    <script src="https://kit.fontawesome.com/af2e246792.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/amoba.css" />
+</head>
+
+<body onload="renew()">
+    <nav data-state="closed">
+        <a class="logo" href="index.html">[reszponzív website]</a>
+        <a href="hades.html">Hádész</a>
+        <a href="starcraft.html">Starcraft II</a>
+        <a href="unrailed.html">Unrailed</a>
+        <a href="amoba.html">3D amőba</a>
+        <a href="#" id="nav_btn" onclick="toggle_nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <header>
+        <div class="hero-text">
+            <h1>3d amőba</h1>
+        </div>
+        <div id="leir card">
+            <p>Szabályzat: A 2D-s amőbához hasonlóan itt is sorba kell helyezni az elemeinket, ezesetben négyet. Viszont itt nem csak a sorokra oszlopokra és átlókra kell odafigyelni, hiszen eggyel több irányba lehet összekötni az elemeket. Például hogyha
+                minden lap jobb alsó cellájába tudunk helyezni elemeket, akkor is nyertünk. Mivel a belső cellákat egyáltalán nem és a külsőket is nehezen tudnánk kiválasztani, hogyha kockaként ábrázolnánk a játékteret, azt lapjaira vágva négy darab négyszer
+                négyes 2D-s játéktérre bontva ábrázoltuk, ezekbe kattintva felváltva helyezhetőek el az 'X' és 'O' elemek. Így viszont nehéz átlátni, ezért a '3D' gomb használatával és a kurzor mozgatásával kockához hasonló nézetben is megtekinthetjük
+                a játékteret, bár ekkor nem tudunk elemeket elhelyezni. Megtalálható emellett egy 'Undo' gomb, mellyel a legutóbbi lépést visszavonhatjuk, valamint egy 'Új játék' gomb, mellyel új játékot kezdhetünk.</p>
+        </div>
+    </header>
+
+    <main>
+        <div id="kjub" data-is3d="false">
+            <table id="lap1">
+                <tr>
+                    <td onclick="go(0, 0, 0)"></td>
+                    <td onclick="go(0, 0, 1)"></td>
+                    <td onclick="go(0, 0, 2)"></td>
+                    <td onclick="go(0, 0, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(0, 1, 0)"></td>
+                    <td onclick="go(0, 1, 1)"></td>
+                    <td onclick="go(0, 1, 2)"></td>
+                    <td onclick="go(0, 1, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(0, 2, 0)"></td>
+                    <td onclick="go(0, 2, 1)"></td>
+                    <td onclick="go(0, 2, 2)"></td>
+                    <td onclick="go(0, 2, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(0, 3, 0)"></td>
+                    <td onclick="go(0, 3, 1)"></td>
+                    <td onclick="go(0, 3, 2)"></td>
+                    <td onclick="go(0, 3, 3)"></td>
+                </tr>
+            </table>
+
+            <table id="lap2">
+                <tr>
+                    <td onclick="go(1, 0, 0)"></td>
+                    <td onclick="go(1, 0, 1)"></td>
+                    <td onclick="go(1, 0, 2)"></td>
+                    <td onclick="go(1, 0, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(1, 1, 0)"></td>
+                    <td onclick="go(1, 1, 1)"></td>
+                    <td onclick="go(1, 1, 2)"></td>
+                    <td onclick="go(1, 1, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(1, 2, 0)"></td>
+                    <td onclick="go(1, 2, 1)"></td>
+                    <td onclick="go(1, 2, 2)"></td>
+                    <td onclick="go(1, 2, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(1, 3, 0)"></td>
+                    <td onclick="go(1, 3, 1)"></td>
+                    <td onclick="go(1, 3, 2)"></td>
+                    <td onclick="go(1, 3, 3)"></td>
+                </tr>
+            </table>
+
+            <table id="lap3">
+                <tr>
+                    <td onclick="go(2, 0, 0)"></td>
+                    <td onclick="go(2, 0, 1)"></td>
+                    <td onclick="go(2, 0, 2)"></td>
+                    <td onclick="go(2, 0, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(2, 1, 0)"></td>
+                    <td onclick="go(2, 1, 1)"></td>
+                    <td onclick="go(2, 1, 2)"></td>
+                    <td onclick="go(2, 1, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(2, 2, 0)"></td>
+                    <td onclick="go(2, 2, 1)"></td>
+                    <td onclick="go(2, 2, 2)"></td>
+                    <td onclick="go(2, 2, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(2, 3, 0)"></td>
+                    <td onclick="go(2, 3, 1)"></td>
+                    <td onclick="go(2, 3, 2)"></td>
+                    <td onclick="go(2, 3, 3)"></td>
+                </tr>
+            </table>
+            <table id="lap4">
+                <tr>
+                    <td onclick="go(3, 0, 0)"></td>
+                    <td onclick="go(3, 0, 1)"></td>
+                    <td onclick="go(3, 0, 2)"></td>
+                    <td onclick="go(3, 0, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(3, 1, 0)"></td>
+                    <td onclick="go(3, 1, 1)"></td>
+                    <td onclick="go(3, 1, 2)"></td>
+                    <td onclick="go(3, 1, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(3, 2, 0)"></td>
+                    <td onclick="go(3, 2, 1)"></td>
+                    <td onclick="go(3, 2, 2)"></td>
+                    <td onclick="go(3, 2, 3)"></td>
+                </tr>
+                <tr>
+                    <td onclick="go(3, 3, 0)"></td>
+                    <td onclick="go(3, 3, 1)"></td>
+                    <td onclick="go(3, 3, 2)"></td>
+                    <td onclick="go(3, 3, 3)"></td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="gombok">
+            <input type="button" value="New game" onclick="renew()" id="renew" />
+            <input type="button" value="3D" onclick="display()" id="display" />
+            <input type="button" value="Undo" onclick="undo()" id="undo" />
+            <input type="button" value="2D" onclick="stopdisplay()" id="stopdisplay" />
+        </div>
+    </main>
+</body>
+
+</html>

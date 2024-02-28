@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Videójátékok</title>
+  <script defer src="../code/app.js"></script>
+  <script defer src="../code/sc2.js"></script>
+  <script src="https://kit.fontawesome.com/af2e246792.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/sc2.css" />
+</head>
+
+<body>
+  <nav data-state="closed" data-faj="terran" id="nav">
+    <a class="logo" href="index.html">[reszponzív website]</a>
+    <a href="hades.html">Hádész</a>
+    <a href="starcraft.html">Starcraft II</a>
+    <a href="unrailed.html">Unrailed</a>
+    <a href="amoba.html">3D amőba</a>
+    </a>
+    <a href="#" id="nav_btn" onclick="toggle_nav();">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+  <header>
+    <div class="hero-text">
+      <img src="../pics/sc2/titlecard.png" />
+    </div>
+  </header>
+  <main>
+    <div class="card" id="leiras" data-faj="terran">
+      <h2>Játékleírás</h2>
+      <p>
+        A StarCraft 2 egy RTS (Real Time Strategy) vagyis valós idejű,
+        stratégiai játék, ami szinte mindig azt jelenti, hogy felülnézetből
+        irányítunk egységeket, és építünk házakat, infrastruktúrát.<br />
+        A játék több játékmódot kínál, így megtalálható az intenzív, és gyors,
+        de a visszafogottabb, nyugalmas játék is, a játékmódok közül a
+        legnépszerűbbek a PvP (Player vs Player) vagyis játékos játékos elleni
+        mód, azonbelül is az 1v1, a Campain, amiben a story(kat) játszhatjuk
+        végig,<br />
+        és a Co-Op, ahol ketten küzdhetünk meg egy Campain szerű kűldetéssel,
+        valamint különleges képességekkel.<br />
+        A fő játékmódokban három faj közül választhatunk: A Terran a Protoss
+        és a Zerg.<br>
+        
+
+      </p>
+      <p>
+        <i>A fajok logoaira kattintva témát válthatunk!</i>
+      </p>
+    </div>
+    <div class="card" id="terran" data-faj="terran">
+      <img src="../pics/sc2/terran-logo.png" onclick="theme('terran')"/>
+      <h2>TERRAN</h2>
+      <h3>
+        Történetük:
+      </h3>
+      <p>
+        A Terranok a jövőbeli emberek, pontosabban elítélt bűnözők, akiket
+        büntetés képpen 3 óriási kolónia-hajón kilőttek az űrbe, így megoldva
+        a túlnépesedést, és az űrfelfedezést is. Azóta viszont sok sok év
+        eltelt, teljes civilizációk alakult ki belőlük, ezeknek belső és külső
+        konfliktusaival. Technológiájuk fejledt a maihoz képest, viszont a
+        játék világában primitívnek számít. Idővel kialakult egy úgynevezett
+        pszihonikus energia, egy emberfeletti képesség, mellyel kiemelkedő
+        erőre tett szert néhány ember. A maradék kisebb-nagyobb robot
+        páncélokat, gépeket, repülőket és űrhajókat irányítva tartották a
+        lépést, így a teljesedett ki a Terran haderő.
+      </p>
+      <h3>Fontos karakterek:</h3>
+      <ul>
+        <li>
+          <h4>
+            Arcturus Mengsk
+          </h4>
+          <p>
+            Mengsk a Terran "dominion" diktátora, a vaskezü uralkodó, aki az
+            előző nagyhatalmat megdöntő bajtársait elárulva jutott hatalomra,
+            a széria történetének egyik fő ellensége.
+          </p>
+        </li>
+        <li>
+          <h4>
+            James Raynor
+          </h4>
+          <p>
+            Az egyik elárult bajtárs, aki újabb lázadást szított Mengsk ellen,
+            ezt játszhatjuk végig a starcraft 2 első Campain-ében, a "Wings of
+            Liberty"-ben. A széria egyik főszereplője, a történet jókora
+            részét az ő szemszögéből követjük, játszuk.
+          </p>
+        </li>
+      </ul>
+      <h3>
+        Játékmenet (PvP):
+      </h3>
+      <p>
+        A Terran az arany középút, bármilyen stratégiát lehet vele játszani,
+        bár kiemelkedő a védekezése, egységei közepesen sok nyersanyagba
+        kerülnek, és nagyon jó ár-érték arányúak.
+      </p>
+    </div>
+    <div class="card" id="protoss" data-faj="protoss">
+      <img src="../pics/sc2/protoss-logo.png" onclick="theme('protoss')" />
+      <h2>PROTOSS</h2>
+      <h3>Történetük:</h3>
+      <p>
+        A Protoss az első faj, nemes, fejledt, és letisztul technológiájukkal
+        uralkodnak, bár politikai nézeteik megkérdőjelezhetőek. Egyfajta
+        diktatorikus uralom van jelen, de az elméjüket és "lelküket" összekötő
+        "khala" miatt erős egységben, közösségben élnek, "Daelaam" néven.
+        <br />
+        Vannak persze, akik megtagadják az effajta életet, és elválasztják
+        magukat a "khala" áldásától megalakítva a "Nerazim" klánt, ezzel
+        szabadon élnek, de maguk ellen fordítják a saját fajukat, hiszen ezt a
+        legtöbb protoss bűnnek látja.
+      </p>
+      <h3>Fontos karakterek:</h3>
+      <ul>
+        <li>
+          <h4>
+            Artanis
+          </h4>
+          <p>
+            A fő Protoss társadalom a "Daelaam" uralkodója, aki ellenben a
+            sztereotípiával elfogadó és megértő vezető, így amikor egy ősi
+            veszély fenyegeti a világot, hajlandó egyesíteni nem csak a
+            Protossokat hanem a Terranokat és a Zergeket is, ezt a küldetést
+            játszhatjuk végig a második kiegészítőben, a "Legacy of the
+            Void"ban.
+          </p>
+        </li>
+        <li>
+          <h4>
+            Zeratul
+          </h4>
+          <p>
+            Az egész széria alatt mentorként, és bölcs útmutatóként szereplő
+            remete, aki a "Nerazim"-hez tartozik, így tisztán látja a világot,
+            képes koncentrálni a lényegre, viszont múltja miatt egyre
+            kevesebben hallgatnak rá.
+          </p>
+        </li>
+      </ul>
+      <h3>
+        Játékmenet (PvP):
+      </h3>
+      <p>
+        A Protoss játékmenetét tekintve gazdaság fókuszált, harci egységei
+        általában sok nyersanyagba kerülnek, viszont ezzel jóval erősebbek is
+        megfelelőikhez képest. Egy klasszikus stratégia az úgynevezett
+        "deathball" melynek alapötlete az, hogy paasszívan játszva
+        felállítsunk egy megállíthatatlan hadsereget, majd azzal könnyen
+        söpörjük le a pályát.
+      </p>
+    </div>
+    <div class="card" id="zerg" data-faj="zerg">
+      <img src="../pics/sc2/zerg-logo.png" onclick="theme('zerg')" />
+      <h2>ZERG</h2>
+      <h3>Történetük:</h3>
+      <p>
+        A Zergek a Protossok megállítására, elpusztítására lettek teremtve,
+        éles karmokkal strapabíró pikkejekkel és bőrrel, esetenként fémen is
+        pillanatok alatt átolvasztó savval ellátott szörnyetegek vagyis
+        valójában eredetileg egy fegyver az egész faj, kivéve egy egyedet, az
+        "Overmind"-ot, aki őket irányította a fő célra. Az Overmind viszont
+        elpusztult a starcraft 1-ben, így a vad zergek céltalanul pusztítottak
+        tovább.
+      </p>
+      <h3>Fontos karakterek:</h3>
+      <ul>
+        <li>
+          <h4>
+            Abathur
+          </h4>
+          <p>
+            A Zergek evolúciója, alkalmazkodóképessége nagyon gyors, ennek
+            továbbfejlesztését veszi fő feladatának Abathur. Létének egyetlen
+            céja az, hogy megteremtse a tökéletes egyedet minden helyzetre
+            ezzel elősegítve a vezető célját. Ezt azzal éri el, hogy más
+            fajokat egybeolvaszt a zerggel, megőrizve erősségeiket, és eldobva
+            gyengeségeiket.
+          </p>
+        </li>
+        <li>
+          <h4>Kerrigan</h4>
+          <p>
+            A fő történetszál másik főszereplője, emberként Raynorral és
+            Mengskel egyetemben sikeresen megdöntötték az akkori Terran
+            uralmat, de őt a csatamezőn hagyva elrabolták a Zergek.<br />
+            Tekintve, hogy pszihonikus képességei nagyon erősek, a Zergek
+            megőrizték, "továbbfejlesztették" őt, végül viszon thatalomra
+            került, azóta új célt adott a Zergeknek, bosszútálni Mengsk-en.
+            Ezt a bosszút vihetjük végbe az első kiegészítőben a "Heart of the
+            Swarm"-ban.
+          </p>
+        </li>
+      </ul>
+      <h3>
+        Játékmenet (PvP):
+      </h3>
+      <p>
+        A Zergek fő eszméje az, hogy túlterheljék ellenségüket, olcsó,
+        feláldozható egységek ezreit küldik harcba. Játéstílusuk így
+        agresszív, pörgős, és bár ez nagyban kedvez támadásuknak, védekezés
+        terén visszamaradtabbak.
+      </p>
+    </div>
+    <div class="card video-container" data-faj="terran" id="WoL">
+      <iframe src="https://www.youtube.com/embed/VSGmPpidDvo" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="card" data-faj="terran" id="WoLtxt">
+      <img src="../pics/sc2/terran-logo.png" onclick="theme('terran')" />
+      <h2>Wings of Liberty</h2>
+      <p>2010 július 27-én jelent meg, együtt a magával a játékkal, 29 játszható küldetéssel, és a starcraft 1-hez
+        képest teljesen átdolgozott grafikával, és nagyban átdolgozott játékmenettel.<br>
+        Kétségtelen siker volt, sok rajongót teremtett, sok régi játékost kielégített, méltó utódja sőt
+        továbbfejlesztése lett a még akkor is viszonylag népszerű első résznek.<br>
+        Mint az első játékban, itt is hamar nagy sikere lett az e-sport versenyeknek, elképesztő teljesítményeket
+        láthattunk a világ minden pontjáról, óriási rendezvények kerültek szervezésre.</p>
+    </div>
+    <div class="card" data-faj="zerg" id="HotStxt">
+      <img src="../pics/sc2/zerg-logo.png" onclick="theme('zerg')" />
+      <h2>Heart of the Swarm</h2>
+      <p>A Zerg kampány 2013 Március 12-én jelent meg, ugyan csak 20 fő küldetése volt, de azok különlegesek,
+        innovatívak voltak. Emellett a storyban sokat haladt előre, lezárt történetszálakat, teljes élmény volt.<br>
+        A Story-mód mellet kisebb-nagyobb változáok érkeztek a PvP-ben is, a játék népszerüsége egy ideig továbbra is
+        nőtt, viszont egy idő után visszaesett.<br>
+        Az e-sport újra felvirágzott, egy friss levegőként hatottak a változtatások, egyre több egyre jobb játékos lett,
+        sokan nagyon fiatalon kezdve.</p>
+    </div>
+    <div class="card video-container" data-faj="zerg" id="HotS">
+      <iframe src="https://www.youtube.com/embed/MVbeoSPqRs4" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="card video-container" data-faj="protoss" id="LotV">
+      <iframe src="https://www.youtube.com/embed/M_XwzBMTJaM" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="card" data-faj="protoss" id="LotVtxt">
+      <img src="../pics/sc2/protoss-logo.png" onclick="theme('protoss')" />
+      <h2>Legacy of the Void</h2>
+      <p>A 2015 November 10-én megjelent második kiegészítő egy fő 19 küldetésből álló, és két kisebb 3-3 küldetésből
+        álló sztoriból állt.<br>
+        Ezzel kiteljesedett a széria, mindhárom faj megkapta a rivaldafényt, és bár a történet lezárása nem kapott túl
+        pozitív visszajelzést, a játék megerősítette népszerűségét, és további fejlesztéseket hozott.<br>
+        Ezek között volt a Co-op játékmód is, mellyel visszatekinthettünk, egy új csavart tehettünk az eddigi megkedvelt
+        küldetésekre mindhárom kampányból. Ráadásul ezt az eddig megismert karakterekkel tehettük.<br>
+        E-sport terén azóta is van élet, és bár már nem olyan népszrű mint fénykorában, mivel a játék sokkal
+        komplikáltabb mint például a sakk, folyamatosan egyre magasabb szintre emelkednek a versenyzők.</p>
+    </div>
+  </main>
+</body>
+
+</html>

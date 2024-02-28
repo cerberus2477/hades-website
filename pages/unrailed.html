@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Videójátékok</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <script src="https://kit.fontawesome.com/af2e246792.js" crossorigin="anonymous"></script>
+    <script src="../code/app.js"></script>
+
+    <style>
+         :root {
+            --clr-1: rgb(229, 192, 93);
+            --clr-light: white;
+            --clr-dark: rgb(4, 8, 2)
+        }
+        
+        @font-face {
+            font-family: 'Press Start 2P';
+            src: url("../fonts/unrailed/PressStart2P.ttf");
+        }
+        
+        html,
+        body {
+            font-family: 'Press Start 2P';
+            background-image: linear-gradient(rgba(0 0 0 /.2), rgba(0 0 0 /.2)), url("../pics/unrailed/wallpaper.jpg");
+        }
+        
+        .hero-text {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            main {
+                grid-template-columns: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav data-state="closed">
+        <a class="logo" href="index.html">[reszponzív website]</a>
+        <a href="hades.html">Hádész</a>
+        <a href="starcraft.html">Starcraft II</a>
+        <a href="unrailed.html">Unrailed</a>
+        <a href="test.html">Dinooo</a>
+        <a href="amoba.html">3D amőba</a>
+        <a href="#" id="theme_btn" class="btn" onclick="toggle_theme('hades')">
+            <i class="fa-solid fa-sun"></i>
+        </a>
+
+    </nav>
+    <header>
+        <div class="hero-text">
+            <h1>Unrailed!</h1>
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            <h2>Alap koncepció</h2>
+            <p>
+                A játék alapvetően kooperatív fókuszú, amelyben az a cél, hogy egy mozdonyt és egy szerelvényt vezetve folyamatosan építsünk vasúti pályát, és szállítsunk árut az egyik állomásról a másikra, miközben figyelünk az időre és az erőforrásainkra. A játékmenet
+                véletlenszerűen generált pályákon zajlik, és számos kihívást tartogat azok számára, akik szeretik a gyors gondolkodást és a csapatmunkát.
+            </p>
+        </div>
+        <div class="card">
+            <h2>Kezdés</h2>
+            <p>A játék kezdetén csak egy kis mozdonyunk és néhány alapanyagunk van, és az első dolgunk az, hogy megépítsük az első pályaszakaszt. A pálya építése során az alapanyagokat különféle módon lehet összegyűjteni, például az erdőben fát lehet vágni,
+                a hegyekből különféle ásványokat lehet kitermelni, és az állomásokon lehet vásárolni.</p>
+        </div>
+        <div class="card">
+            <h2>Játékmenet</h2>
+            <p>Az idő folyamatosan halad, és ha nem sikerül időben befejezni a pályát, a mozdonyunk kisiklik, és vége a játéknak. Az erőforrásaink is végesek, és ha elfogy valamelyik, akkor nehézkes lesz az építkezés, így fontos figyelni azokra is. Habár
+                később lehet erre egy speciális vagonunk.</p>
+        </div>
+        <div class="card">
+            <h2>Azért nem olyan egyszerű mint tűnik</h2>
+            <p>A játék során számos kihívásba ütközhetünk, például az időjárás változása miatt a pályán felhalmozódó hó, eső és homok megnehezítheti az építést. Emellett a játékmenet folyamatosan változik, az alapanyagok és az állomások elhelyezkedése mindig
+                más és más, így mindig új stratégiákat kell alkalmaznunk.</p>
+        </div>
+        <div class="card card-wide">
+            <h2>Biomok és jellegzetességeik</h2>
+            <dl>
+                <dt>Síkság</dt>
+                <dd>A kiinduló biome, sok nyersanyagot tartalmaz és a banditákon kívül nincsennek veszélyek. Megtalálhatóak <b>MÚÚÚK</b>(tehenek) itt.</dd>
+                <dt>Sivatag</dt>
+                <dd>Itt már kevesebb fát és vizet fogunk találni ezt nem könnyítik meg a tevék akik kiiszák a vödörből a vizet. további nehezítés, hogy több az elpusztíthatalan blokk mégtöbb koordinációt igényel</dd>
+                <dt>Hó</dt>
+                <dd>Ebben a biomeban a legnagyobb akadály maga a hó lesz ami lelassítja a mozgásunkat amíg nem törik el, de hóesésnél újraépül</dd>
+                <dt>Vízalatt</dt>
+                <dd>Ez a legújabb biome, itt a víz alatt kell boldogulnunk, figyelve hogy ne fogyjon el az oxigénünk, valamint hogy ne robbantsanak fel a környező halak. </dd>
+            </dl>
+            <p>A többi biomról nem lövöm le a poént, akinek felkeltettem az érdeklődését az fedezze fel magának, barátaival.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>

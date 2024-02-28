@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hádész</title>
+    <script src="https://kit.fontawesome.com/af2e246792.js" crossorigin="anonymous"></script>
+    <script defer src="../code/app.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="../pics/hades/save-icon.png" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link id="theme_link" rel="stylesheet" href="../styles/hades.css" />
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0 0 0 /0.4), rgba(0 0 0 /0.4)), url("../pics/hades/wallpaper1.png");
+        }
+        
+        nav {
+            background-color: rgba(150, 0, 0, 0.8)
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        header img {
+            width: 60%;
+        }
+        
+        footer img {
+            height: 100%;
+            float: right;
+        }
+        
+        main {
+            grid-template-areas: "bev bev bev-yt bev-yt" "zene zene voiceline voiceline" "zene-yt rougelite rougelite rougelite" "sztori luck luck luck" "sztori sztori-img sztori-img voiceline-img" "hades2-yt hades2-yt hades2 hades2";
+        }
+        
+        #bev {
+            grid-area: bev;
+        }
+        
+        #bev-yt {
+            grid-area: bev-yt;
+        }
+        
+        #rougelite {
+            grid-area: rougelite;
+        }
+        
+        #sztori {
+            grid-area: sztori;
+        }
+        
+        #sztori-img {
+            grid-area: sztori-img;
+        }
+        
+        #zene {
+            grid-area: zene;
+        }
+        
+        #zene-yt {
+            grid-area: zene-yt;
+        }
+        
+        #voiceline {
+            grid-area: voiceline;
+        }
+        
+        #voiceline-img {
+            grid-area: voiceline-img;
+        }
+        
+        #luck {
+            grid-area: luck;
+        }
+        
+        #hades2 {
+            grid-area: hades2;
+        }
+        
+        #hades2-yt {
+            grid-area: hades2-yt;
+        }
+        
+        @media screen and (max-width: 900px) {
+            main {
+                display: grid;
+                grid-template-areas: "bev" "bev-yt" "rougelite" "sztori" "sztori-img" "zene" "zene-yt" "voiceline" "voiceline-img" "luck" "hades2" "hades2-yt";
+            }
+        }
+        
+        .heart {
+            /* background: url("../pics/hades/heart.png"); */
+            position: absolute;
+            height: 50px;
+            /* width: 50px; */
+            opacity: 0;
+            z-index: 11;
+        }
+        
+        .heart-animation {
+            animation: floating-heart 1.5s linear;
+        }
+        
+        #cerberus {
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            width: fit-content;
+            height: fit-content;
+        }
+        
+        .heart:nth-of-type(1) {
+            animation-delay: 0s;
+        }
+        
+        .heart:nth-of-type(2) {
+            animation-delay: .7s;
+        }
+        
+        .heart:nth-of-type(3) {
+            animation-delay: 1.4s;
+        }
+        
+        @keyframes floating-heart {
+            0% {
+                opacity: 0;
+                bottom: 50%;
+                left: 80%;
+            }
+            33% {
+                opacity: 1;
+                bottom: 66%;
+                left: 90%;
+            }
+            66% {
+                bottom: 83%;
+                left: 70%;
+            }
+            100% {
+                opacity: 1;
+                bottom: 100%;
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav data-state="closed">
+        <a class="logo" href="index.html">[reszponzív website]</a>
+        <a href="hades.html">Hádész</a>
+        <a href="starcraft.html">Starcraft II</a>
+        <a href="unrailed.html">Unrailed</a>
+        <a href="amoba.html">3D amőba</a>
+        <a href="#" id="theme_btn" class="btn" onclick="toggle_theme('hades')">
+            <i class="fa-solid fa-sun"></i>
+        </a>
+        <a href="#" id="nav_btn" onclick="toggle_nav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <header>
+
+        <img src="../pics/hades/Hades.png" alt="Hádész" />
+
+
+        <!-- <div class="icons-container">
+      <a href="https://store.steampowered.com/app/1145360/Hades/" target="_blank">
+        <img class="icon" src="../pics/icons/steam3.png" alt="Steam" />
+      </a>
+      <a href="https://store.epicgames.com/en-US/p/hades" target="_blank">
+        <img class="icon" src="../pics/icons/epicgames.png" alt="Epic Games" />
+      </a>
+      <a href="#" class="btn">
+        <i class="fa-solid fa-compact-disc"></i>
+      </a>
+    </div> -->
+    </header>
+
+    <main>
+        <div id="bev" class="card">
+            <h2>Milyen játék a Hádész?</h2>
+            <p>
+                Egy szóval jellemezve: zseniális. A történet, a megunhatatlan játékmenet, a karakterek, a zene és a szereplők hangjátéka, a rajzstílus egyszerűen letehetetlenné és tényleg valami maradandóvá teszi a Hádészt.
+                <br> Azonban térjünk vissza az elejére: <br><br> Karakterünk, az ifjú Zagreus célja meglépni az otthonából, az alvilágból feljusson az Olümposz hegyére (legalábbis eleinte), ezért az ötletért viszont a tőle elhidegült apja, Hadész egyáltalán
+                nem rajong. De hagyja, hadd próbálkozzon a lázadó tinédzser, gondolván, hogy úgy sem fogja tudni átverekedni magát a holtak sokemeletes lakhelyén. Mindez a játékmenetre lefordítva azt jelenti, hogy bemegyünk egy szobába, ott levágunk minden
+                ellenállást, amely az utunkba áll, aztán megyünk tovább a következő véletlenszerűen kisorsolt terembe.
+            </p>
+        </div>
+        <div id="bev-yt" class="card video-container ">
+            <iframe src="https://www.youtube.com/embed/91t0ha9x0AE" title="Hades - Official Animated Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+
+        <div id="rougelite" class="card">
+            <h2>Halál halál után</h2>
+            <p>
+                A játék rouge-like stílusából fakadóan minden halál egy új kezdetet jelent. Azonban a többi rouge-like játékhoz képest, itt az sem jelent olyan nagy lelki fájdalmat amikor a hosszas harcok után minden életünk elfogy (valjuk be, Hádésznak igaza volt abban,
+                hogy nem könnyű feladat elsőre megszökni). Igaz, hogy akkor mászhatunk elő a családi ház vérmedencéjéből, de legközelebbi szökési kísérletünkkor erősebbek leszünk, mint az előző körben voltunk. Így a Hádészt inkább <i>rouge-lite</i>-nak
+                szokták bekategorizálni. <br><br> A Hádész megtalálta az egyensúlyt a nehézség és a fejlődés között. Sőt, mikor már kiszabadultunk a pokolból (a játék igazán csak akkor kezdődik) egy <i>Heat rendszer</i>t vezet be a játék, mellyel egyre
+                nehezebbé tehetjük életünket (vagy halálunkat?...). De ha már elegünk lenne abból hogy Megeara egymás után tizenötödjére ítél minket ostorhalálra és küld minket haza, nem kell agóódni, a készítők ránk is gondltak. A
+                <i>God mode</i> bekapcsolásával kicsit segíthetünk magunkon, hogy tudjunk a történetre fókuszálni.
+            </p>
+        </div>
+
+        <div id="sztori" class="card">
+            <h2>
+                A történet és Zagreus kivolta
+            </h2>
+            <p>
+                Utunkat istenek, valamint más legendás alakok (Sziszüphosz, Eurüdiké stb.) is támogatják: Zeusz, Artemisz, Aphrodité, Athéné és mások hozzájuk tematikusan illeszkedő, aktív vagy passzív bónuszokkal teszik könnyebbé létezésünk. Ilyenkor, és Hádész házában
+                a karakterekkel interaktálva bontakozik ki a történet. A játék nagyon jól megfogja az istenek lényét, kilétét, és végsősoron azt, hogy ők is csak olyanok, mintha egy ember kezébe adnánk végtelen hatalmat a következmények szinte teljes
+                hiányával. Családokat látunk, sajátos vitákat és kicsinyes sértődéseket.
+                <br><br> A Hádész értelemszerűen a görög mondavilágon épül, de nem tart meg minden részletet úgy, ahogy az a legelterjedtebb formájában fellelhető. Beleszólunk a történetbe; rég szétszakadt lélektársakat egyesíthetünk újra, haláluk után.
+                A múzsa nélkül maradt zenésznek hozhatjuk vissza élete (és halála) örömét.
+                <br><br> Maga Zagreus alakja is érdekes. Az alkotók szándékoltan egy olyan figurához nyúltak, akiről alig van információnk az eredeti történetek alapján. Abban sem értenek egyet a források, hogy a herceg tényleg Hádész fia volt-e vagy
+                Dionüszoszé, a boristené. Ez egyfajta nyitottságot ad a készítőknek; nincsen előre behatárolva Zagreus sorsa és története, az lehet akit csak szeretnének.
+                <br>És az alkotók bizony egy rettentő szerethető és humoros karaktert tettek össze. Ha egy-egy játékban jogos is a félelem, hogy a főszereplő irritál majd minket, nem szabadulhatunk tőle, az biztosan nem a Hádész.
+            </p>
+        </div>
+        <div id="sztori-img" class="card image-container">
+            <img src="../pics/hades/zagtext.jpg" alt="Zagreus szövege" />
+        </div>
+
+        <div id="zene" class="card">
+            <h2>A zene</h2>
+            <p>
+                <i>Darren Korb</i> - aki Zagreus és Skelly, egy másik fanfavourite hangját is adja többek között - felejthetetlen zenéket komponált a játék kíséréséhez. Metált vegyít egész hagyományos hangszerekkel, egyszerre izgalmas és ahol kell érzelmes
+                vokál énekel egy-egy cutscene alatt. Váratlan, egyedi, de ami a legfontosabb, megérdemelt kíséret egy ilyen jól sikerült játékhoz. A Hádész ikonikus fő témája 3 változatban is megjelenik a játékban, az legintenzívebb a játék legbossfightabb
+                bossfightja alatt. A "The Unseen Ones" játékon belül ezzel a szöveggel jelenik meg: "Banned for containing too many notes per second", ez elég sokat elmond :D
+            </p>
+        </div>
+
+        <div id="zene-yt" class="card video-container">
+            <iframe src="https://www.youtube.com/embed/3GRKJ87S5cI" title="Hades: Original Soundtrack - Full Album" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+
+        <div id="voiceline" class="card">
+            <h2>Rengeteg voice-line</h2>
+            <p>
+                Olyan szituációk miatt is megtisztel egy-egy szereplő külön szöveggel minket, amire nagyon kevés az esély, hogy teljseítjük. Például Hádész egy külön voiceline-nal készült nekünk, ha legelsőre elérünk hozzá, mint boss-hoz, vagy ha minden áldás nélkül
+                sikerül eléállnunk. <br> És persze nem feledkezhetünk el Hypnosról, aki segítőkészen szinte minden halálunkat kommentálja.
+            </p>
+        </div>
+
+        <!-- <div id="" class="info-container">
+      <div class="card info">
+        <h2>info: tronok harca hossz, eloszlas kép</h2>
+        <p>A Hádész összes szövege több szóból áll, mint a Trónok harca.</p>
+      </div>
+    </div> -->
+
+        <!-- <div class="card image-container">
+      <img src="../pics/hades/voicelines.jpg" alt="szöveg eloszlás" />
+    </div> -->
+
+        <div id="voiceline-img" class="card image-container">
+            <img src="../pics/hades/hypnos.jpg" alt="Hypnos" />
+        </div>
+
+
+        <div id="luck" class="card">
+            <h2>Nincs két ugyanolyan kör</h2>
+            <p>
+                Ahhoz, hogy sikeresen kiszabadulhassunk az alvilágból, számtalan szobán (chamber) kell keresztülküzdenünk magunkat. A játék azonban repetitiv lénye ellenére egyáltalán nem unalmas, sőt, még több száz újrakezdés után is tud valami újat mutatni. Minden
+                játék előtt más fegyvert (majd a játékban előre haladva a fegyver 3 különböző „oldala” közül is) választhatunk, melyek már önmagukban lényegesen megváltoztatják a játékmenetet. A játék közben még erősebbek leszünk. Egy-egy sorsdöntő Daedelus
+                kalapácsa, mely a választott fegyvernek újabb egyedi erőt kölcsönöz (például hármat lőhetünk az íjunkkal egyszerre egy helyet) és a számtalan lehetséges boon (áldás) miatt szinte minden körre egy új megközelítést kell alkalmaznunk, hiszen
+                az, hogy milyen képességeket szerzünk meg nagyban a szerencsén múlik. Így harcolhatjuk magunk keresztül az alvilágon egy mind egy villámokat szóró boxkesztűvel és lézerekkel, mind egy íjjal mely egyszerre 5 vesszővel sorozza egyszerre
+                az ellenfeleinket, melyek követik azt.
+            </p>
+        </div>
+
+
+        <div id="hades2" class="card">
+            <h2>Hádész 2</h2>
+            <p>
+                A Hádész mögött lévő stúdió, a Supergiants, decemberben, a <i>The Game Awards 2022</i> eseményen hozta el a Hádész 2 hírét. Mindenkit meglepett, hogy a nagysikerű Hádész folytatást kap, hiszen ilyet a stúdió még egy játékukkal sem csinált.
+                A bejelentés alapján a játék nem Zagreust, hanem valószínűsíthetően az ő féltestvérét, Melinoë-t fogja követni.
+            </p>
+        </div>
+
+
+
+
+
+
+        <div id="hades2-yt" class="card video-container">
+            <iframe src="https://www.youtube.com/embed/l-iHDj3EwdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+
+        <div id="cerberus" onclick="cerberus()">
+            <img src="../pics/hades/cerberus.png" alt="cerberus" />
+            <img class="heart" src="../pics/hades/heart.png" alt="Szív">
+            <img class="heart" src="../pics/hades/heart.png" alt="Szív">
+            <img class="heart" src="../pics/hades/heart.png" alt="Szív">
+        </div>
+
+    </main>
+
+
+
+</body>
+
+</html>

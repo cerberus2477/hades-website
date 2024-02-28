@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DINOOO</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      background-image: url("../pics/unrailed/32237069_sl_072622_51930_13.jpg");
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script>
+    // Create a scene
+    const scene = new THREE.Scene();
+
+    //Create an orthograpic camera
+    const camera = new THREE.OrthographicCamera(
+      window.innerWidth / -32,
+      window.innerWidth / 32,
+      window.innerHeight / 32,
+      window.innerHeight / -32,
+      0, 5000);
+
+    camera.position.set(-5, 30, 25); // Position the camera
+    camera.lookAt(0, 0, 0); // Orient the camera to look at the origin
+
+    const light = new THREE.DirectionalLight(0xffffff, 1.5); //white light
+    light.position.set(-28, 50, 26);
+    //light.castShadow=true;
+    light.lookAt(0, 0, 0)
+    scene.add(light);
+
+
+    // Create a renderer
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    // Set up the renderer to render shadows
+    //renderer.shadowMap.enabled = true;
+    //renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    // Create a plane
+
+    const geometry = new THREE.PlaneGeometry(250, 200, 16, 16);
+
+
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load("../pics/unrailed/bgtile.png")
+
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(77, 66)
+    const material = new THREE.MeshBasicMaterial({ map: texture });
+
+    const plane = new THREE.Mesh(geometry, material);
+    //plane.receiveShadow = true;//shadows receive
+    plane.position.set(0, -100, -100)
+    plane.rotateX(-Math.PI / 2)
+    scene.add(plane);
+
+    // Load the GLTF object
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      '../pics/unrailed/3d/test.gltf',
+      (gltf) => {
+        const character = gltf.scene;
+        character.name = 'dino'
+        //character.castShadow=true;//Shadow cast
+        //character.receiveShadow = true;
+        scene.add(character);
+        loaded();
+      },
+      (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+      },
+      (error) => {
+        console.error('An error occurred', error);
+      }
+    );
+    function loaded() {
+      const dino = scene.getObjectByName('dino');
+      console.log(dino);
+      if (dino) {
+
+        const keys = {
+          W: false,
+          A: false,
+          S: false,
+          D: false
+        };
+        document.addEventListener('keydown', (event) => {
+          const keyCode = event.code;
+          if (keyCode === 'KeyW') {
+            keys.W = true;
+          } else if (keyCode === 'KeyA') {
+            keys.A = true;
+          } else if (keyCode === 'KeyS') {
+            keys.S = true;
+          } else if (keyCode === 'KeyD') {
+            keys.D = true;
+          }
+        });
+        document.addEventListener('keyup', (event) => {
+          const keyCode = event.code;
+          if (keyCode === 'KeyW') {
+            keys.W = false;
+          } else if (keyCode === 'KeyA') {
+            keys.A = false;
+          } else if (keyCode === 'KeyS') {
+            keys.S = false;
+          } else if (keyCode === 'KeyD') {
+            keys.D = !true;
+          }
+        })
+          ;
+
+
+
+
+        // Update the character's position based on the keyboard input
+        function update() {
+          if (keys.W) {
+            dino.position.z -= 0.12;
+            dino.rotation.set(0, 0, 0)
+          }
+          if (keys.A) {
+            dino.position.x -= 0.12;
+            dino.rotation.set(0, Math.PI / 2, 0)
+          }
+          if (keys.S) {
+            dino.position.z += 0.12;
+            dino.rotation.set(0, Math.PI, 0)
+          }
+          if (keys.D) {
+            dino.position.x += 0.12;
+            dino.rotation.set(0, -Math.PI / 2, 0)
+          }
+        }
+
+        // Render the scene
+        function animate() {
+          requestAnimationFrame(animate);
+          update();
+          renderer.render(scene, camera);
+        }
+        animate();
+      }
+    }
+  </script>
+</body>
+
+</html>

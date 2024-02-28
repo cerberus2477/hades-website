@@ -1,0 +1,167 @@
+.main-header {
+    overflow: hidden;
+    background: black;
+}
+
+.main-header .slide {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    padding: 100px 200px;
+
+    position: absolute;
+    inset: 0;
+
+    transition: transform 400ms ease;
+}
+
+.main-header .slide.active {
+    display: block;
+}
+
+.hero-text {
+    position: relative;
+    /* margin: 3rem 5rem 3rem 15rem; */
+    /* text-align: left; */
+    color: whitesmoke;
+    z-index: 8;
+    width: 70%;
+    margin-top: 50px;
+    /* height: 100%; */
+    /* max-width: 5rem; */
+
+    /* float: left; */
+}
+
+
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero-text a {
+    margin: 0;
+}
+
+.main-header .btn-container {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+
+    display: flex;
+    gap: 1rem;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: .5rem;
+
+    float: right;
+}
+
+.main-header .btn-container button {
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+}
+
+.main-header .btn-container button i {
+    font-size: large;
+}
+
+
+section.slide video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+
+    filter: brightness(80%);
+}
+
+
+
+
+.main-header .slide[data-status="inactive"] {
+    transform: translateX(-100%);
+    transition: none;
+}
+
+.main-header .slide[data-status="active"] {
+    transform: translateX(0%);
+}
+
+.main-header .slide[data-status="before"] {
+    transform: translateX(-100%);
+}
+
+.main-header .slide[data-status="after"] {
+    transform: translateX(100%);
+}
+
+.main-header .slide[data-status="before-to-active"] {
+    transform: translateX(-100%);
+    transition: none;
+}
+
+.main-header .slide[data-status="after-to-active"] {
+    transform: translateX(100%);
+    transition: none;
+}
+
+
+main {
+    grid-template-areas:
+        "cim cim andras tunde"
+        "bev levi andras tunde";
+    background-color: whitesmoke;
+}
+
+.cim {
+    grid-area: cim;
+}
+
+.bev {
+    grid-area: bev;
+}
+
+.levi {
+    grid-area: levi;
+}
+
+.andras {
+    grid-area: andras;
+}
+
+.tunde {
+    grid-area: tunde;
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        grid-template-areas:
+            "cim cim"
+            "bev levi"
+            "andras tunde";
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        grid-template-areas:
+            "cim"
+            "bev"
+            "levi"
+            "andras"
+            "tunde";
+    }
+}

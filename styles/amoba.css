@@ -1,0 +1,217 @@
+:root {
+    --PosX: 0;
+    --PosY: 0;
+    --DarkBlue: rgb(5, 5, 70);
+    --DarkRed: rgb(70, 5, 5);
+    --Blue: rgba(12, 12, 140, 0.4);
+    --Red: rgba(140, 12, 12, 0.4);
+}
+
+main {
+    display: block;
+}
+
+
+/*======================================================================CELLÁK============================================================================*/
+
+td[data-ki="o"]:hover {
+    /*Üres cella, kör jön*/
+    background-color: var(--Red);
+    border: solid 2px var(--DarkRed);
+}
+
+td[data-ki="x"]:hover {
+    /*Üres cella, iksz jön*/
+    background-color: var(--Blue);
+    border: solid 2px var(--DarkBlue);
+}
+
+td[data-ki="nax"] {
+    /*Teli cella, iksz benne*/
+    color: var(--DarkBlue);
+}
+
+td[data-ki="nao"] {
+    /*Teli cella, kör benne*/
+    color: var(--DarkRed);
+}
+
+td[data-ki="wx"] {
+    /*Teli cella, iksz benne, iksz nyert*/
+    color: var(--DarkBlue);
+    background-color: var(--Blue);
+}
+
+td[data-ki="wo"] {
+    /*Teli cella, kör benne, kör nyert*/
+    color: var(--DarkRed);
+    background-color: var(--Red);
+}
+
+td[data-ki="nax"]:hover,
+td[data-ki="nao"]:hover,
+td[data-ki="na"]:hover {
+    /*na: olyan cella ahova nem lehet tenni*/
+    background-color: whitesmoke;
+    color: gray;
+    border: solid 2px gray;
+}
+
+td {
+    height: calc(3vh + 3vw);
+    width: calc(3vh + 3vw);
+    border-collapse: collapse;
+    border: solid 1px rgb(10, 10, 10);
+    text-align: center;
+    font-size: calc(2vh + 2vw);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: ease background-color 0.5s;
+    background-color: white;
+    user-select: none;
+}
+
+
+/*====================================================================TÁBLÁK============================================================================*/
+
+#kjub table {
+    transition: all .1s;
+}
+
+#kjub[data-is3d="false"] {
+    display: grid;
+    grid-template-areas: "t1 t2 t3 t4";
+}
+
+@media screen and (max-width: 1000px) {
+    #kjub[data-is3d="false"] {
+        grid-template-areas: "t1 t2" "t3 t4";
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #kjub[data-is3d="false"] {
+        grid-template-areas: "t1" "t2" "t3" "t4";
+    }
+    #lap1 {
+        grid-area: t1;
+    }
+    #lap2 {
+        grid-area: t2;
+    }
+    #lap3 {
+        grid-area: t3;
+    }
+    #lap4 {
+        grid-area: t4;
+    }
+}
+
+#kjub[data-is3d="true"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+}
+
+#kjub[data-is3d="true"] table {
+    position: absolute;
+}
+
+
+/*===========================3D RÉTEGEK=================================*/
+
+#kjub[data-is3d="true"] table:nth-child(1) {
+    transform: translateX(calc(var(--PosX) * -0.09%)) translateY(calc(var(--PosY) * -0.09%)) rotateX(calc(var(--PosY) * 0.07deg)) rotateY(calc(var(--PosX) * -0.06deg));
+    filter: opacity(50%);
+    z-index: 15;
+}
+
+#kjub[data-is3d="true"] table:nth-child(2) {
+    transform: translateX(calc(var(--PosX) * -0.03%)) translateY(calc(var(--PosY) * -0.03%)) rotateX(calc(var(--PosY) * 0.07deg)) rotateY(calc(var(--PosX) * -0.06deg));
+    filter: opacity(55%);
+    z-index: 10;
+}
+
+#kjub[data-is3d="true"] table:nth-child(3) {
+    transform: translateX(calc(var(--PosX) * 0.03%)) translateY(calc(var(--PosY) * 0.03%)) rotateX(calc(var(--PosY) * 0.07deg)) rotateY(calc(var(--PosX) * -0.06deg));
+    filter: opacity(60%);
+    z-index: 5;
+}
+
+#kjub[data-is3d="true"] table:nth-child(4) {
+    transform: translateX(calc(var(--PosX) * 0.09%)) translateY(calc(var(--PosY) * 0.09%)) rotateX(calc(var(--PosY) * 0.07deg)) rotateY(calc(var(--PosX) * -0.06deg));
+    filter: opacity(65%);
+    z-index: 1;
+}
+
+
+/*======================================================================HÁTTÉR============================================================================*/
+
+body {
+    transition: all 1s;
+    background: linear-gradient(-45deg, var(--DarkBlue), var(--Blue), whitesmoke, var(--Red), var(--DarkRed));
+    background-size: 400%, 400%;
+    /* NAGY és csak el van tolva, így lehet rajta transition*/
+    background-position: 100% 100%;
+}
+
+body[data-ki="x"] {
+    background-position: 100% 100%;
+}
+
+body[data-ki="o"] {
+    background-position: 0% 0%;
+}
+
+
+/*======================================================================GOMBOK============================================================================*/
+
+#stopdisplay {
+    display: none;
+}
+
+#gombok {
+    height: 20vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+input {
+    padding: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    border: 1px solid rgb(10, 10, 10);
+    transition: all ease-in-out 0.2s;
+}
+
+#display,
+#stopdisplay {
+    font-size: 3rem;
+}
+
+input:hover {
+    background-color: gray;
+}
+
+
+/*======================================================================LEÍRÁS============================================================================*/
+
+#leir {
+    padding: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    border: 1px solid rgb(10, 10, 10);
+    transition: all ease-in-out 0.2s;
+}
+
+header {
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
