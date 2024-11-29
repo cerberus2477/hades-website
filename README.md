@@ -1,46 +1,46 @@
 # hades-website
-##11-4 Hádészos weboldal
+## 11-4 Hádészos weboldal
 
-      ## Üdvözölve légy, látogató!
-     
-        Eme csodás weboldalon négy fajtájukat tekintve különböző, de játékélményben toplistás játékkal
-        találkozhatsz. A hitelesség érdekében mindegyikünk egy saját szeretett játékát hozta el <strong>csak neked csak
-          most</strong>.
-        Mi lennénk a három készítő:
-   
+## Üdvözölve légy, látogató!
 
-      ## Nacsa Levente
-
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
-        incidunt ullam veritatis quisquam commodi amet minus, ipsum cumque
-        illum voluptates dolorum. Earum sed veritatis dolorem perspiciatis
-        modi! Ducimus totam expedita consectetur soluta incidunt magni
-        quisquam est eaque placeat. Provident quas, sequi magnam quaerat error
-        corrupti debitis minima atque quia eius!
+  Eme csodás weboldalon négy fajtájukat tekintve különböző, de játékélményben toplistás játékkal
+  találkozhatsz. A hitelesség érdekében mindegyikünk egy saját szeretett játékát hozta el <strong>csak neked csak
+    most</strong>.
+  Mi lennénk a három készítő:
 
 
+## Nacsa Levente
 
-      ## Szabolics András
-        Ebben a projektben a saját játék elkészítését kaptam vagyhát vállaltam feladatként, szinte egyből a 3D amőbára
-        ugrott a
-        gondolatom. Többször játszottam már papíron, sőt az ötlet sem új, régóta meg akartam valósítani egy átláthatóbb
-        verzióját. Emellet az egyik első projektemhez 2D-s amőbát csináltam, így fejlődesem bizonyításában is sokat
-        segített ez
-        a feladat. <br>
-        Másodlagos feladatként a StarCraftot mutattam be, egyik kedvenc játék szériám, sokat tudok róla, élmény volt ezt
-        megosztani.
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
+  incidunt ullam veritatis quisquam commodi amet minus, ipsum cumque
+  illum voluptates dolorum. Earum sed veritatis dolorem perspiciatis
+  modi! Ducimus totam expedita consectetur soluta incidunt magni
+  quisquam est eaque placeat. Provident quas, sequi magnam quaerat error
+  corrupti debitis minima atque quia eius!
 
 
 
-      ## Tábor Tünde
-      <p>
-        Tábor Tünde volnék, bár mindannyian ismertek. Szeretem a macskákat, röplabdázni... de most nem ez a lényeg.
-        Ebben a projektben az összefogó dizájn fő ötletgazdája én lettem. Szerettem volna egy nem annyira sablonos
-        weboldalt alkotni, amelyről csak azt lehet elmondani hogy <i>"modern és letisztult"</i>. Inspirációul vettem a
-        kezdetleges, eldugott fanoldalak összességét, amelyeken tükröződik, hogy a weboldal készítője törődik azzal
-        amiről ír. Ezeknél az oldalaknál viszont mérföldekkel navigálhatóbbra és ha úgy tetszik letisztultabbra
-        terveztük a weboldalt. A grid adottságait is kihasználtuk.<br>A játék amit bemutattam a Hádész lett, az all-time
-        kedvenc videójátékom.
+## Szabolics András
+  Ebben a projektben a saját játék elkészítését kaptam vagyhát vállaltam feladatként, szinte egyből a 3D amőbára
+  ugrott a
+  gondolatom. Többször játszottam már papíron, sőt az ötlet sem új, régóta meg akartam valósítani egy átláthatóbb
+  verzióját. Emellet az egyik első projektemhez 2D-s amőbát csináltam, így fejlődesem bizonyításában is sokat
+  segített ez
+  a feladat. <br>
+  Másodlagos feladatként a StarCraftot mutattam be, egyik kedvenc játék szériám, sokat tudok róla, élmény volt ezt
+  megosztani.
+
+
+
+## Tábor Tünde
+<p>
+  Tábor Tünde volnék, bár mindannyian ismertek. Szeretem a macskákat, röplabdázni... de most nem ez a lényeg.
+  Ebben a projektben az összefogó dizájn fő ötletgazdája én lettem. Szerettem volna egy nem annyira sablonos
+  weboldalt alkotni, amelyről csak azt lehet elmondani hogy <i>"modern és letisztult"</i>. Inspirációul vettem a
+  kezdetleges, eldugott fanoldalak összességét, amelyeken tükröződik, hogy a weboldal készítője törődik azzal
+  amiről ír. Ezeknél az oldalaknál viszont mérföldekkel navigálhatóbbra és ha úgy tetszik letisztultabbra
+  terveztük a weboldalt. A grid adottságait is kihasználtuk.<br>A játék amit bemutattam a Hádész lett, az all-time
+  kedvenc videójátékom.
 
 
 ## TERV:
